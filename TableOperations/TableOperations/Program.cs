@@ -41,32 +41,23 @@ namespace TableOperations
             //wycinanie fragmentu stringu
             StringOperations sub = new StringOperations();
 
-            string jakisTekst = sub.subString("JarekGolab", 4, 6);
+            string jakisTekst = sub.SubString("JarekGolab",2, 3);
 
-            
-                Console.Write(jakisTekst);
+            Console.Write(jakisTekst);
+           
+                
             
             Console.WriteLine();
 
             //odwracanie stringu
-
-            for (int i = jakisTekst.Length - 1; i >= 0; i--)
-            {
-                Console.Write(jakisTekst[i]);
-            }
+            string reverseString = sub.ReverseString("Jakiś");
+            
+            Console.Write(reverseString);
+           
 
             //zmiana tekstu na Wielkie litery (ToUpper)
 
-            string text = "jakiś";
-            string text2 = "";
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i] > 95)
-                {
-                  // text2= (char) text[i] - 32;
-                }
-            }
+            
 
             Console.ReadLine();
         }//main
