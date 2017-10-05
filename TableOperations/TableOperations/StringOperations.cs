@@ -4,20 +4,24 @@
     {
         public string SubString(string stringToCut, int start, int length)
         {
+            string subString = "";
             for (int i = start; i < start + length; i++)
             {
-                return stringToCut;
+                subString += stringToCut[i];
             }
-            return "";
+            return subString;
         }
 
         public string ReverseString(string stringToReverse)
         {
-            for (int i = stringToReverse.Length - 1; i <= 0; i--)
+            string reverse = "";
+            for (int i = stringToReverse.Length - 1; i >= 0; i--)
             {
-                return stringToReverse;
+                reverse += stringToReverse[i];
             }
-            return stringToReverse;
+            return reverse;
         }
+
+       
     }
 }

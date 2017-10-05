@@ -39,9 +39,13 @@ namespace TableOperations
 
             Console.WriteLine();
             //wycinanie fragmentu stringu
+
             StringOperations sub = new StringOperations();
 
-            string jakisTekst = sub.SubString("JarekGolab",2, 3);
+            Console.WriteLine("Wpisz jakiś tekst do przycięcia: ");
+            int start = 2;
+            int toCut = 4;
+            string jakisTekst = sub.SubString(Console.ReadLine(), start, toCut);
 
             Console.Write(jakisTekst);
            
@@ -50,14 +54,32 @@ namespace TableOperations
             Console.WriteLine();
 
             //odwracanie stringu
-            string reverseString = sub.ReverseString("Jakiś");
+            Console.WriteLine("Wpisz jakiś tekst do odwrócenia: ");
+            
+            string reverseString = sub.ReverseString(Console.ReadLine());
             
             Console.Write(reverseString);
-           
+            Console.WriteLine();
+
+            // Is It Palindrom???
+
+            Console.WriteLine("Wpisz tekst do sprawdzenia: ");
+            string candidate = Console.ReadLine();
+            string isPalindrom = sub.ReverseString(candidate);
+
+            if (candidate == isPalindrom)
+            {
+                Console.Write("To jest palindrom! ");
+            }
+            else
+            {
+                Console.Write("To NIE jest palindrom!!!");
+            }
+
 
             //zmiana tekstu na Wielkie litery (ToUpper)
 
-            
+
 
             Console.ReadLine();
         }//main
