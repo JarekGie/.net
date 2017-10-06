@@ -38,6 +38,40 @@ namespace TableOperations
             }
 
             Console.WriteLine();
+
+            //suma elementów tablicy
+
+            int suma = 0;
+            for (int i = 0; i < tableRandom.Length; i++)
+            {
+                suma += tableRandom[i];
+            }
+            
+            Console.Write("Suma elementów tablicy to: " + suma);
+            Console.WriteLine();
+
+            // parzyste od początku tablicy, a nieparzyste od końca
+
+            int[] parzyste = rt.quasiRandom(new int[30]);
+
+           // int k = tableRandom.Length - 1;
+
+            for(int i = 0,j = 0,k = tableRandom.Length - 1; i < tableRandom.Length; i++)
+            {
+                if (tableRandom[i] % 2 == 0)
+                {
+                    parzyste[j] = tableRandom[i];
+                    i++;
+                }
+                else
+                {
+                    parzyste[j] = tableRandom[i];
+                    k--;
+                }
+            }
+
+
+
             //wycinanie fragmentu stringu
 
             StringOperations sub = new StringOperations();
@@ -48,10 +82,10 @@ namespace TableOperations
             string jakisTekst = sub.SubString(Console.ReadLine(), start, toCut);
 
             Console.Write(jakisTekst);
-           
-                
+           Console.WriteLine();
             
-            Console.WriteLine();
+
+
 
             //odwracanie stringu
             Console.WriteLine("Wpisz jakiś tekst do odwrócenia: ");
