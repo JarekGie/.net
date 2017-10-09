@@ -4,7 +4,7 @@ namespace TableOperations
 {
     public class BubbleSort
     {
-        public int[] sort(int[] tableToSort)
+        public int[] Sort(int[] tableToSort)
         {
             int temp;
             for (int i = 0; i < tableToSort.Length; i++)

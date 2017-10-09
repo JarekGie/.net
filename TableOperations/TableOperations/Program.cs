@@ -30,7 +30,7 @@ namespace TableOperations
             Console.WriteLine("Sortowanie bąbelkowe: ");
             
             BubbleSort bs = new BubbleSort();
-            int[] result = bs.sort(tableRandom);
+            int[] result = bs.Sort(tableRandom);
             
             for (int i = 0; i < result.Length; i++)
             {
@@ -52,24 +52,20 @@ namespace TableOperations
 
             // parzyste od początku tablicy, a nieparzyste od końca
 
-            int[] parzyste = rt.quasiRandom(new int[30]);
+           IntOperations en = new IntOperations();
 
-           // int k = tableRandom.Length - 1;
+            int[] divideEvenUnEven = en.DivideEvenUneven(new int[10]);
 
-            for(int i = 0,j = 0,k = tableRandom.Length - 1; i < tableRandom.Length; i++)
+
+            Console.WriteLine("Parzyste od początku, nieparzyste od końca tablicy");
+
+            for (int i = 0; i < divideEvenUnEven.Length; i++)
             {
-                if (tableRandom[i] % 2 == 0)
-                {
-                    parzyste[j] = tableRandom[i];
-                    i++;
-                }
-                else
-                {
-                    parzyste[j] = tableRandom[i];
-                    k--;
-                }
+                Console.Write(divideEvenUnEven[i] + " ");
             }
 
+           
+           Console.WriteLine();
 
 
             //wycinanie fragmentu stringu
