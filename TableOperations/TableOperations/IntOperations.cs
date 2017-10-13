@@ -1,5 +1,8 @@
 ﻿using System;
 
+//Należy rozdzielić elementy parzyste od nieparzystych umieszczając parzyste od początku nowego wektora 
+//a nieparzyste – od końca.
+
 namespace TableOperations
 {
     public class IntOperations

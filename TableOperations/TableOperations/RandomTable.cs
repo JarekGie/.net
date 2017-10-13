@@ -9,7 +9,7 @@ namespace TableOperations
             
 
             Random r = new Random();
-         //   randomRange = 10;
+       
             for (int i = 0; i < randomTable.Length; i++)
             {
                 randomTable[i] = r.Next(randomRange);
