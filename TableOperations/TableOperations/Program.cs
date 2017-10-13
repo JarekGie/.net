@@ -11,11 +11,17 @@ namespace TableOperations
     {
         static void Main(string[] args)
         {
+
+           
+
+
+            
+            Console.WriteLine();
             //wypełnianie tablicy liczbami pseudolosowymi
 
             RandomTable rt = new RandomTable();
             
-            int[] tableRandom = rt.quasiRandom(new int[10]);
+            int[] tableRandom = rt.PseudoRandom(new int[10],10);
 
             Console.WriteLine("Tablica liczb pseudolosowych: ");
             for (int i = 0; i < tableRandom.Length; i++)
@@ -25,6 +31,25 @@ namespace TableOperations
 
             Console.WriteLine();
 
+
+           Console.WriteLine("Formatowana tablica: ");
+            int counter = 0;
+            int[] formatTable = rt.PseudoRandom(new int[200],20);
+
+            for (int i = 0; i < formatTable.Length; i++)
+            {
+                Console.Write(formatTable[i] + " ");
+                counter++;
+                if (counter == 15)
+                {
+                    Console.WriteLine();
+                    counter = 0;
+                }
+            }
+            
+
+
+            Console.WriteLine();
             //sortowanie bąbelkowe
 
             Console.WriteLine("Sortowanie bąbelkowe: ");
@@ -39,6 +64,12 @@ namespace TableOperations
 
             Console.WriteLine();
 
+
+
+
+
+
+
             //suma elementów tablicy
 
             int suma = 0;
@@ -50,11 +81,17 @@ namespace TableOperations
             Console.Write("Suma elementów tablicy to: " + suma);
             Console.WriteLine();
 
+
+
+
+
+
+
+
             // parzyste od początku tablicy, a nieparzyste od końca
 
            IntOperations en = new IntOperations();
-
-            int[] divideEvenUnEven = en.DivideEvenUneven(new int[10]);
+           int[] divideEvenUnEven = en.DivideEvenUneven(new int[10]);
 
 
             Console.WriteLine("Parzyste od początku, nieparzyste od końca tablicy");
@@ -63,9 +100,12 @@ namespace TableOperations
             {
                 Console.Write(divideEvenUnEven[i] + " ");
             }
-
-           
+            
            Console.WriteLine();
+
+
+
+
 
 
             //wycinanie fragmentu stringu
@@ -78,8 +118,11 @@ namespace TableOperations
             string jakisTekst = sub.SubString(Console.ReadLine(), start, toCut);
 
             Console.Write(jakisTekst);
-           Console.WriteLine();
+            Console.WriteLine();
             
+
+
+
 
 
 
@@ -91,6 +134,11 @@ namespace TableOperations
             Console.Write(reverseString);
             Console.WriteLine();
 
+
+
+
+
+
             // Is It Palindrom???
 
             Console.WriteLine("Wpisz tekst do sprawdzenia: ");
@@ -99,17 +147,17 @@ namespace TableOperations
 
             if (candidate == isPalindrom)
             {
-                Console.Write("To jest palindrom! ");
+                Console.Write(candidate + " To jest palindrom! ");
             }
             else
             {
-                Console.Write("To NIE jest palindrom!!!");
+                Console.Write(candidate + " To NIE jest palindrom!!!");
             }
 
 
             //zmiana tekstu na Wielkie litery (ToUpper)
 
-
+    
 
             Console.ReadLine();
         }//main
