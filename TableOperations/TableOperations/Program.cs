@@ -12,10 +12,6 @@ namespace TableOperations
         static void Main(string[] args)
         {
 
-
-
-
-
             Console.WriteLine();
             //wypełnianie tablicy liczbami pseudolosowymi
 
@@ -33,9 +29,11 @@ namespace TableOperations
 
             //Wygenerujmy długi, powiedzmy 200-elementowy wektor i wyświetlmy go po 15 elementów w każdym wierszu.
 
-            Console.WriteLine("Formatowana tablica: ");
+            Console.WriteLine("Formatowana tablica z nowym wierszem co 15 element: ");
             int counter = 0;
-            int[] formatTable = randomTable.PseudoRandom(new int[200], 10);
+            int countOfRow = 200;
+            int range = 10;
+            int[] formatTable = randomTable.PseudoRandom(new int[countOfRow], range);
 
             for (int i = 0; i < formatTable.Length; i++)
             {
@@ -57,9 +55,9 @@ namespace TableOperations
             
             Console.WriteLine("Tablica dwuwymiarowa: ");
 
-            RandomTwoDimensionalTable td = new RandomTwoDimensionalTable();
+            RandomTwoDimensionalTable twoDimens = new RandomTwoDimensionalTable();
 
-            int[,] twoDimensional = td.TwoDimension(new int[2,10],2,10,range:20);
+            int[,] twoDimensional = twoDimens.TwoDimension(4,10,10);
 
             for (int i = 0; i < twoDimensional.GetLength(0); i++)
             {
@@ -76,12 +74,12 @@ namespace TableOperations
              zmodyfikować powyższy program wyświetlając obliczone sumy wierszy i kolumn
              – odpowiednio na końcach wierszy i pod kolumnami
              */
-            int countOfrows = 5;
+           
             int countOfcols = 10;
             int sumOfrows;
             int[] sumOfcols = new int[countOfcols];
 
-            Console.WriteLine("Oto tablica: ");
+            Console.WriteLine("Suma wierszy i kolumn w tablicy:");
 
             sumOfrows = 0;
 
@@ -108,8 +106,8 @@ namespace TableOperations
 
                 Console.WriteLine("Sortowanie bąbelkowe: ");
 
-                BubbleSort bs = new BubbleSort();
-                int[] result = bs.Sort(tableRandom);
+                BubbleSort bubbleSort = new BubbleSort();
+                int[] result = bubbleSort.Sort(tableRandom);
 
                 for (int i = 0; i < result.Length; i++)
                 {
@@ -144,8 +142,8 @@ namespace TableOperations
 
                 // parzyste od początku tablicy, a nieparzyste od końca
 
-                IntOperations en = new IntOperations();
-                int[] divideEvenUnEven = en.DivideEvenUneven(new int[10]);
+                IntOperations evenUneven = new IntOperations();
+                int[] divideEvenUnEven = evenUneven.DivideEvenUneven(new int[10]);
 
 
                 Console.WriteLine("Parzyste od początku, nieparzyste od końca tablicy");
@@ -164,12 +162,12 @@ namespace TableOperations
 
             //wycinanie fragmentu stringu
 
-            StringOperations sub = new StringOperations();
+            StringOperations subString = new StringOperations();
 
                 Console.WriteLine("Wpisz jakiś tekst do przycięcia: ");
                 int start = 2;
                 int toCut = 4;
-                string jakisTekst = sub.SubString(Console.ReadLine(), start, toCut);
+                string jakisTekst = subString.SubString(Console.ReadLine(), start, toCut);
                 Console.Write(jakisTekst);
                 Console.WriteLine();
 
@@ -182,7 +180,7 @@ namespace TableOperations
                 //odwracanie stringu
                 Console.WriteLine("Wpisz jakiś tekst do odwrócenia: ");
 
-                string reverseString = sub.ReverseString(Console.ReadLine());
+                string reverseString = subString.ReverseString(Console.ReadLine());
 
                 Console.Write(reverseString);
                 Console.WriteLine();
@@ -196,7 +194,7 @@ namespace TableOperations
 
                 Console.WriteLine("Wpisz tekst do sprawdzenia: ");
                 string candidate = Console.ReadLine();
-                string isPalindrom = sub.ReverseString(candidate);
+                string isPalindrom = subString.ReverseString(candidate);
 
                 if (candidate == isPalindrom)
                 {
