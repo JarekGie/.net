@@ -35,7 +35,7 @@ namespace TableOperations
 
             Console.WriteLine("Formatowana tablica: ");
             int counter = 0;
-            int[] formatTable = rt.PseudoRandom(new int[200], 20);
+            int[] formatTable = rt.PseudoRandom(new int[200], 10);
 
             for (int i = 0; i < formatTable.Length; i++)
             {
@@ -58,7 +58,8 @@ namespace TableOperations
             Console.WriteLine("Tablica dwuwymiarowa: ");
 
             RandomTwoDimensionalTable td = new RandomTwoDimensionalTable();
-            int[,] twoDimensional = td.TwoDimension(new int[2,10]);
+
+            int[,] twoDimensional = td.TwoDimension(new int[2,10],2,5);
 
             for (int i = 0; i < twoDimensional.GetLength(0); i++)
             {
@@ -123,21 +124,20 @@ namespace TableOperations
                 }
 
                 Console.WriteLine();
+            
 
 
 
 
 
+            //wycinanie fragmentu stringu
 
-                //wycinanie fragmentu stringu
-
-                StringOperations sub = new StringOperations();
+            StringOperations sub = new StringOperations();
 
                 Console.WriteLine("Wpisz jakiś tekst do przycięcia: ");
                 int start = 2;
                 int toCut = 4;
                 string jakisTekst = sub.SubString(Console.ReadLine(), start, toCut);
-
                 Console.Write(jakisTekst);
                 Console.WriteLine();
 

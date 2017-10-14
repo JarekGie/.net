@@ -4,9 +4,11 @@ namespace TableOperations
 {
     public class RandomTwoDimensionalTable
     {
-        public int[,] TwoDimension(int[,] twoDimensional)
+        public int[,] TwoDimension(int[,] twoDimensional, int ilw, int ilk)
         {
-            int[,] twoDimensionalTable = new int[2, 5];
+            ilw = 2;
+            ilk = 5;
+            int[,] twoDimensionalTable = new int[ilw, ilk];
 
             Random random = new Random();
             for (int i = 0; i < twoDimensionalTable.GetLength(0); i++)
@@ -16,7 +18,7 @@ namespace TableOperations
                     twoDimensionalTable[i, j] = random.Next(10);
                 }
             }
-            return twoDimensional;
+            return twoDimensionalTable;
         }
     }
 }

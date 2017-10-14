@@ -30,23 +30,6 @@ namespace TableOperations
             }
             return evenNumber;
         }//DivideEvenUneven
-
-        /*public int[] FormatTable(int[] fotmatTable)
-        {
-            Console.Write("Formatowana tabela");
-            int counter = 0;
-            int[] formatTable = rt.PseudoRandom(new int[200]);
-
-            for (int i = 0; i < formatTable.Length; i++)
-            {
-                Console.Write(formatTable[i] + " ");
-                if (counter == 15)
-                {
-                    Console.WriteLine();
-                }
-            }
-            return formatTable;
-
-        }//FormatTable*/
+       
     }//IntOperations
 }//namespace
