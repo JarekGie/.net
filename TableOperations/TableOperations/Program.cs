@@ -19,9 +19,9 @@ namespace TableOperations
             Console.WriteLine();
             //wypełnianie tablicy liczbami pseudolosowymi
 
-            RandomTable rt = new RandomTable();
+            RandomTable randomTable = new RandomTable();
 
-            int[] tableRandom = rt.PseudoRandom(new int[10], 10);
+            int[] tableRandom = randomTable.PseudoRandom(new int[10], 10);
 
             Console.WriteLine("Tablica liczb pseudolosowych: ");
             for (int i = 0; i < tableRandom.Length; i++)
@@ -35,7 +35,7 @@ namespace TableOperations
 
             Console.WriteLine("Formatowana tablica: ");
             int counter = 0;
-            int[] formatTable = rt.PseudoRandom(new int[200], 10);
+            int[] formatTable = randomTable.PseudoRandom(new int[200], 10);
 
             for (int i = 0; i < formatTable.Length; i++)
             {
@@ -50,7 +50,7 @@ namespace TableOperations
 
             Console.WriteLine();
 
-            //tablica
+           
             //Wygenerować i wyświetlić  na ekranie tablicę 2-wymiarową.
 
            
@@ -59,7 +59,7 @@ namespace TableOperations
 
             RandomTwoDimensionalTable td = new RandomTwoDimensionalTable();
 
-            int[,] twoDimensional = td.TwoDimension(new int[2,10],2,5);
+            int[,] twoDimensional = td.TwoDimension(new int[2,10],2,10,range:20);
 
             for (int i = 0; i < twoDimensional.GetLength(0); i++)
             {
@@ -69,9 +69,41 @@ namespace TableOperations
                 }
                 Console.WriteLine();
             }
-            //tablica
-
             Console.WriteLine();
+
+
+            /*
+             zmodyfikować powyższy program wyświetlając obliczone sumy wierszy i kolumn
+             – odpowiednio na końcach wierszy i pod kolumnami
+             */
+            int countOfrows = 5;
+            int countOfcols = 10;
+            int sumOfrows;
+            int[] sumOfcols = new int[countOfcols];
+
+            Console.WriteLine("Oto tablica: ");
+
+            sumOfrows = 0;
+
+            for (int i = 0; i < twoDimensional.GetLength(0); i++)
+            {
+                for (int j = 0; j < twoDimensional.GetLength(1); j++)
+                {
+                    sumOfcols[j] +=  twoDimensional[i,j];
+
+                    Console.Write(twoDimensional[i,j] + " ");
+
+                    sumOfrows += twoDimensional[i, j];
+                }
+                Console.WriteLine(" " + sumOfrows);
+                sumOfrows = 0;
+            }
+            for (int i = 0; i < countOfcols; i++)
+            {
+                Console.Write(sumOfcols[i] + " ");
+            }
+
+            Console.WriteLine("\n\n");
                 //sortowanie bąbelkowe
 
                 Console.WriteLine("Sortowanie bąbelkowe: ");
@@ -174,13 +206,8 @@ namespace TableOperations
                 {
                     Console.Write(candidate + " To NIE jest palindrom!!!");
                 }
-
-
-                //zmiana tekstu na Wielkie litery (ToUpper)
-
-
-
-                Console.ReadLine();
+                
+             Console.ReadLine();
             } //main
         } //class
 

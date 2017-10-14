@@ -7,13 +7,13 @@ namespace TableOperations
 {
     public class IntOperations
     {
-        RandomTable rt = new RandomTable();
+        RandomTable randomTable = new RandomTable();
 
         public int[] DivideEvenUneven(int[] evenNumber)
         {
             
 
-            int[] tableRandom = rt.PseudoRandom(new int[10],10);
+            int[] tableRandom = randomTable.PseudoRandom(new int[10],10);
 
             for (int i = 0, j = 0, k = tableRandom.Length - 1; i < tableRandom.Length; i++)
             {
